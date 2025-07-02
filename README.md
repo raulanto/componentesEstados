@@ -15,12 +15,16 @@ Cuándo usar:
     Para datos y eventos simples.
 
 Ejemplo:
+```js
 // hijo.component.ts
 @Input() mensaje: string;
 @Output() notificar = new EventEmitter<string>();
-
+```
+```js
 <!-- padre.component.html -->
 <app-hijo [mensaje]="mensajePadre" (notificar)="manejarNotificacion($event)"></app-hijo>
+```
+<hr/>
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.4.
 
@@ -31,6 +35,7 @@ To start a local development server, run:
 ```bash
 ng serve
 ```
+
 
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
