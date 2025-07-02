@@ -1,6 +1,27 @@
 # ComponentesEstados
 Cómo compartir datos entre componentes de angular, estrategía con @Input @Output 🔥🧑‍💻✨
 
+@Input() y @Output()
+
+¿Qué es?
+La comunicación directa entre componentes padre e hijo.
+
+    @Input(): El padre pasa datos al hijo.
+    @Output(): El hijo emite eventos al padre usando EventEmitter.
+
+Cuándo usar:
+
+    Cuando tienes una relación jerárquica directa (padre-hijo).
+    Para datos y eventos simples.
+
+Ejemplo:
+// hijo.component.ts
+@Input() mensaje: string;
+@Output() notificar = new EventEmitter<string>();
+
+<!-- padre.component.html -->
+<app-hijo [mensaje]="mensajePadre" (notificar)="manejarNotificacion($event)"></app-hijo>
+
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.4.
 
 ## Development server
